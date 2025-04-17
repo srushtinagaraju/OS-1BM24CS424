@@ -1,0 +1,127 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_TASKS 10
+#define SIMULATION_TIME 20
+
+typedef struct {
+    int id;
+    int execution_time;
+    int period;
+    int deadline;
+    int remaining_time;
+    int next_release;
+    float proportion;
+    float used_time;
+} Task;
+
+void reset_tasks(Task tasks[], int n) {
+    for (int i = 0; i < n; i++) {
+        tasks[i].remaining_time = 0;
+        tasks[i].next_release = 0;
+        tasks[i].used_time = 0;
+    }
+}
+
+void simulate_rate_monotonic(Task tasks[], int n) {
+    printf("\n[Rate Monotonic Scheduling]\n");
+    reset_tasks(tasks, n);
+    for (int time = 0; time < SIMULATION_TIME; time++) {
+        int chosen = -1;
+        for (int i = 0; i < n; i++) {
+            if (time == tasks[i].next_release) {
+                tasks[i].remaining_time = tasks[i].execution_time;
+                tasks[i].next_release += tasks[i].period;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (tasks[i].remaining_time > 0) {
+                if (chosen == -1 || tasks[i].period < tasks[chosen].period)
+                    chosen = i;
+            }
+        }
+        if (chosen != -1) {
+            printf("Time %2d: Task %d\n", time, tasks[chosen].id);
+            tasks[chosen].remaining_time--;
+        } else {
+            printf("Time %2d: Idle\n", time);
+        }
+    }
+}
+
+void simulate_edf(Task tasks[], int n) {
+    printf("\n[Earliest Deadline First Scheduling]\n");
+    reset_tasks(tasks, n);
+    for (int time = 0; time < SIMULATION_TIME; time++) {
+        int chosen = -1;
+        for (int i = 0; i < n; i++) {
+            if (time == tasks[i].next_release) {
+                tasks[i].remaining_time = tasks[i].execution_time;
+                tasks[i].deadline = time + tasks[i].period;
+                tasks[i].next_release += tasks[i].period;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (tasks[i].remaining_time > 0) {
+                if (chosen == -1 || tasks[i].deadline < tasks[chosen].deadline)
+                    chosen = i;
+            }
+        }
+        if (chosen != -1) {
+            printf("Time %2d: Task %d\n", time, tasks[chosen].id);
+            tasks[chosen].remaining_time--;
+        } else {
+            printf("Time %2d: Idle\n", time);
+        }
+    }
+}
+
+void simulate_proportional(Task tasks[], int n) {
+    printf("\n[Proportional Scheduling]\n");
+    reset_tasks(tasks, n);
+    for (int time = 0; time < SIMULATION_TIME; time++) {
+        int chosen = -1;
+        float min_ratio = 1.0;
+        for (int i = 0; i < n; i++) {
+            if (time % tasks[i].period == 0) {
+                tasks[i].used_time = 0;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            if (tasks[i].used_time / tasks[i].proportion < min_ratio) {
+                chosen = i;
+                min_ratio = tasks[i].used_time / tasks[i].proportion;
+            }
+        }
+        if (chosen != -1) {
+            printf("Time %2d: Task %d\n", time, tasks[chosen].id);
+            tasks[chosen].used_time += 1;
+        } else {
+            printf("Time %2d: Idle\n", time);
+        }
+    }
+}
+
+void main() {
+    Task tasks[MAX_TASKS];
+    int n;
+
+    printf("Enter number of tasks: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        tasks[i].id = i + 1;
+        printf("\nTask %d:\n", i + 1);
+        printf("Execution Time: ");
+        scanf("%d", &tasks[i].execution_time);
+        printf("Period: ");
+        scanf("%d", &tasks[i].period);
+        printf("Proportion (0 to 1) for Proportional Scheduling: ");
+        scanf("%f", &tasks[i].proportion);
+    }
+
+    simulate_rate_monotonic(tasks, n);
+    simulate_edf(tasks, n);
+    simulate_proportional(tasks, n);
+}
+
