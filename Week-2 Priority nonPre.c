@@ -77,3 +77,24 @@ int main() {
     priorityScheduling(proc, n);
     return 0;
 }
+
+//OUTPUT
+Enter the number of processes: 3
+
+Enter burst time for process 1: 6
+Enter priority for process 1: 2
+
+Enter burst time for process 2: 8
+Enter priority for process 2: 1
+
+Enter burst time for process 3: 7
+Enter priority for process 3: 3
+
+
+Average Waiting Time: 7.33
+Average Turnaround Time: 14.33
+
+Process ID    Burst Time    Priority    Waiting Time    Turnaround Time
+2             8             1           0              8
+1             6             2           8              14
+3             7             3           14             21
