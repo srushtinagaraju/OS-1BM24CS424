@@ -125,3 +125,77 @@ void main() {
     simulate_proportional(tasks, n);
 }
 
+//OUTPUT
+Enter number of tasks: 1
+
+Task 1:
+Execution Time: 2
+Period: 5
+Proportion (0 to 1) for Proportional Scheduling: 0.4
+[Rate Monotonic Scheduling]
+Time  0: Task 1
+Time  1: Task 1
+Time  2: Idle
+Time  3: Idle
+Time  4: Idle
+Time  5: Task 1
+Time  6: Task 1
+Time  7: Idle
+Time  8: Idle
+Time  9: Idle
+Time 10: Task 1
+Time 11: Task 1
+Time 12: Idle
+Time 13: Idle
+Time 14: Idle
+Time 15: Task 1
+Time 16: Task 1
+Time 17: Idle
+Time 18: Idle
+Time 19: Idle
+[Earliest Deadline First Scheduling]
+Time  0: Task 1
+Time  1: Task 1
+Time  2: Idle
+Time  3: Idle
+Time  4: Idle
+Time  5: Task 1
+Time  6: Task 1
+Time  7: Idle
+Time  8: Idle
+Time  9: Idle
+Time 10: Task 1
+Time 11: Task 1
+Time 12: Idle
+Time 13: Idle
+Time 14: Idle
+Time 15: Task 1
+Time 16: Task 1
+Time 17: Idle
+Time 18: Idle
+Time 19: Idle
+[Proportional Scheduling]
+Time  0: Task 1
+Time  1: Task 1
+Time  2: Idle
+Time  3: Idle
+Time  4: Idle
+Time  5: Task 1
+Time  6: Task 1
+Time  7: Idle
+Time  8: Idle
+Time  9: Idle
+Time 10: Task 1
+Time 11: Task 1
+Time 12: Idle
+Time 13: Idle
+Time 14: Idle
+Time 15: Task 1
+Time 16: Task 1
+Time 17: Idle
+Time 18: Idle
+Time 19: Idle
+
+
+
+
