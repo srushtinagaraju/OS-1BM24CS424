@@ -93,3 +93,44 @@ int main() {
     priorityScheduling(proc, n);
     return 0;
 }
+
+//OUTPUT
+Enter number of processes: 4
+Enter AT, BT, and Priority P1: 0 5 10
+Enter AT, BT, and Priority P2: 1 4 20
+Enter AT, BT, and Priority P3: 2 2 30
+Enter AT, BT, and Priority P4: 4 1 40
+
+Choose Scheduling Algorithm:
+1. Preemptive Priority Scheduling
+2. Non-Preemptive Priority Scheduling
+Enter choice: 1
+
+P#      AT      BT      PR      CT      TAT     WT
+1       0       5       10      5       5       0
+2       1       4       20      9       8       4
+3       2       2       30      11      9       7
+4       4       1       40      12      8       7
+Average TAT: 7.50
+Average WT: 4.50
+
+Enter number of processes: 5
+Enter AT, BT, and Priority P1: 0 3 5
+Enter AT, BT, and Priority P2: 2 2 3
+Enter AT, BT, and Priority P3: 3 5 2
+Enter AT, BT, and Priority P4: 4 4 4
+Enter AT, BT, and Priority P5: 6 1 1
+
+Choose Scheduling Algorithm:
+1. Preemptive Priority Scheduling
+2. Non-Preemptive Priority Scheduling
+Enter choice: 2
+
+P#      AT      BT      PR      CT      TAT     WT
+1       0       3       5       3       3       0
+2       2       2       3       11      9       7
+3       3       5       2       8       5       0
+4       4       4       4       15      11      7
+5       6       1       1       9       3       2
+Average TAT: 6.20
+Average WT: 3.20
