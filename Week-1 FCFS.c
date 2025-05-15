@@ -37,3 +37,19 @@ void main(){
 }
 
 
+//OUTPUT
+Enter the total number of processes: 3
+Enter Brust Time:
+P[1]: 2
+P[2]: 3
+P[3]: 4
+
+Process Burst Time Waiting Time Turn Around Time
+P[1] 2 0 2
+P[2] 3 2 5
+P[3] 4 5 9
+
+Avg. Waiting time: 2.33
+Avg. Turn Around Time: 5.33
+
+
