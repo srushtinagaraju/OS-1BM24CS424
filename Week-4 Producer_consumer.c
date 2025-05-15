@@ -79,3 +79,33 @@ int main() {
     free(buffer);
     return 0;
 }
+
+
+//OUTPUT
+Enter the number of Producers: 1
+Enter the number of Consumers: 1
+Enter buffer capacity: 3
+Successfully created producer 1
+Successfully created consumer 1
+Producer 1 produced 17
+Buffer:17
+Consumer 2 consumed 17
+Current buffer len: 0
+Producer 1 produced 42
+Buffer:42
+Consumer 2 consumed 42
+Current buffer len: 0
+Producer 1 produced 9
+Buffer:9
+Consumer 2 consumed 9
+Current buffer len: 0
+Producer 1 produced 35
+Buffer:35
+Consumer 2 consumed 35
+Current buffer len: 0
+Producer 1 produced 23
+Buffer:23
+Consumer 2 consumed 23
+Current buffer len: 0
+
+
