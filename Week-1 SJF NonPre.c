@@ -48,3 +48,19 @@ int main(){
     }
     SJF();
 }
+
+
+//OUTPUT
+Enter the total number of processes: 3
+Enter Burst Time:
+P[1]: 6
+P[2]: 8
+P[3]: 7
+
+Process    Burst Time    Waiting Time    Turnaround Time
+P[1]        6            0              6
+P[3]        7            6              13
+P[2]        8            13             21
+
+Average Waiting Time = 6.333333
+Average Turnaround Time = 13.333333
