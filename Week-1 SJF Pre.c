@@ -49,3 +49,16 @@ int main() {
     printf("\nAvg TAT: %.2f, Avg WT: %.2f\n", totalTAT / n, totalWT / n);
     return 0;
 }
+
+//OUTPUT
+Enter number of processes: 3
+AT & BT of P1: 0 5
+AT & BT of P2: 1 3
+AT & BT of P3: 2 8
+
+AT  BT  CT  TAT  WT
+0   5   5   5    0
+1   3   3   2    -1
+2   8   8   6    -2
+
+Avg TAT: 4.33, Avg WT: -0.33
