@@ -81,3 +81,20 @@ int main() {
     roundRobin(n, at, bt, quant);
     return 0;
 }
+
+//OUTPUT
+Enter number of processes: 5
+Enter AT and BT for process 1: 0 5
+Enter AT and BT for process 2: 1 3
+Enter AT and BT for process 3: 2 1
+Enter AT and BT for process 4: 3 2
+Enter AT and BT for process 5: 4 3
+Enter time quantum: 2
+P#      AT      BT      CT      TAT     WT
+1       0       5       13      13      8
+2       1       3       12      11      8
+3       2       1       5       3       2
+4       3       2       9       6       4
+5       4       3       14      10      7
+Average TAT: 8.60
+Average WT: 5.80
