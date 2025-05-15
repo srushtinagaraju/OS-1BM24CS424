@@ -91,3 +91,25 @@ int main()
 
     return 0;
 }
+
+//OUTPUT
+Philosopher 1 is thinking
+Philosopher 2 is thinking
+Philosopher 3 is thinking
+Philosopher 4 is thinking
+Philosopher 5 is thinking
+Philosopher 1 is Hungry
+Philosopher 1 takes fork 5 and 1
+Philosopher 1 is Eating
+Philosopher 2 is Hungry
+Philosopher 3 is Hungry
+Philosopher 1 putting fork 5 and 1 down
+Philosopher 1 is thinking
+Philosopher 2 takes fork 1 and 2
+Philosopher 2 is Eating
+Philosopher 4 is Hungry
+Philosopher 5 is Hungry
+Philosopher 2 putting fork 1 and 2 down
+Philosopher 2 is thinking
+Philosopher 3 takes fork 2 and 3
+Philosopher 3 is Eating 
