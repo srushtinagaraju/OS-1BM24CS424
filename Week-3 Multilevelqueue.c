@@ -63,3 +63,27 @@ void main()
         }
 }
 
+
+//OUTPUT
+Enter no. of process:5
+Enter PID, AT, BT, type (0-sys, 1=user);1 2 3 0
+Enter PID, AT, BT, type (0=sys, 1=user);2 0 4 1
+Enter PID, AT, BT, type (0=sys, 1=user);3 1 2 0
+Enter PID, AT, BT, type (0=sys, 1=user);4 4 1 1
+Enter PID, AT, BT, type (0=sys, 1=user);5 3 5 1
+ 
+Sys process (Higher Priority)
+PID BT AT CT TAT WT
+3   1  2  3  2   0
+1   2  3  6  4   1
+
+Sys process (Higher Priority)
+PID BT AT CT TAT WT
+2   0  4  4  4   0
+5   3  5  9  6   1
+4   4  1  10 6   5
+
+Process returned 3 (0x3)
+execution time: 4.096 s
+Press any key to continue.
+
