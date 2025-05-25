@@ -104,3 +104,61 @@ int main() {
         }
     }
 }
+
+Output:
+
+File Allocation Methods
+1. Sequential
+2. Indexed
+3. Linked
+4. Exit
+Enter your choice: 1
+
+Sequential Allocation
+Enter starting block and length of file: 5 4
+File allocated from block 5 to 8
+
+File Allocation Methods
+1. Sequential
+2. Indexed
+3. Linked
+4. Exit
+Enter your choice: 1
+
+Sequential Allocation
+Enter starting block and length of file: 6 3
+File allocated from block 6 to 8
+
+File Allocation Methods
+1. Sequential
+2. Indexed
+3. Linked
+4. Exit
+Enter your choice: 2
+
+Indexed Allocation
+Enter index block: 10
+Enter number of blocks needed: 3
+Enter blocks: 11 12 13
+File allocated with index block 10 and blocks: 11 12 13
+
+File Allocation Methods
+1. Sequential
+2. Indexed
+3. Linked
+4. Exit
+Enter your choice: 3
+
+Linked Allocation
+Enter number of blocks needed: 3
+Enter blocks: 20 21 22
+File allocated using linked blocks: 20 -> 21 -> 22 -> NULL
+
+File Allocation Methods
+1. Sequential
+2. Indexed
+3. Linked
+4. Exit
+Enter your choice: 4
+
+Process returned 0 (0x0)   execution time : 87.901 s
